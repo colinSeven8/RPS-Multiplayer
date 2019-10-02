@@ -1,0 +1,18 @@
+.jumbotron {
+    background-color: rgb(82, 51, 11);
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(12, 62, 94);
+    color: white;
+    font-weight: bold;
+}
+
+#add-train {
+    background-color: rgb(12, 62, 94);
+}
+
+label {
+    font-weight: bold;
+}

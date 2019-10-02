@@ -1,5 +1,5 @@
 <!-- Colin Reesor
-    RPS Multiplayer
+    Train Scheduler
     Firebase homework -->
 
 <!DOCTYPE html>
@@ -8,28 +8,87 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-
     <!--Reset CSS-->
     <link rel="stylesheet" href="assets/css/reset.css">
-
-    <!--Media Query-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- Original CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <title>RPS Multiplayer</title>
+    <title>Train Scheduler</title>
 </head>
 
 <body>
-    
+
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="text-center">Anytime is Train Time</h1>
+            <h3 class="text-center">Choo Choo. Chee Chee.</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        Current Train Schedule
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Train Name</strong></th>
+                                    <th scope="col"><strong>Destination</strong></th>
+                                    <th scope="col"><strong>Frequency (min)</strong></th>
+                                    <th scope="col"><strong>Next Arrival</strong></th>
+                                    <th scope="col"><strong>Minutes Away</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Add Train
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="train-name-input">Train Name</label>
+                                <input type="text" class="form-control" id="train-name-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="destination-input">Destination</label>
+                                <input type="text" class="form-control" id="destination-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="first-train-time-input">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="first-train-time-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input type="text" class="form-control" id="frequency-input">
+                            </div>
+                            <button id="add-train" type="submit"
+                                class="btn btn-primary"><strong>Submit</strong></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap CDNs, including personal js file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
