@@ -2,4 +2,4 @@ This is an app that allows you to input a name for a train, the first train time
 
 The web app stores the input data in a Google Firebase database. It also uses Moment.js for time calculations.
 
-Try it here: https://colinSeven8.github.io/TrainTimes/
+Try it here: https://colinseven8.github.io/Train-Times/
